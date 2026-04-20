@@ -624,24 +624,24 @@ body::after {
     </div>
   </div>
 
-  <!-- === NOUVEAU LECTEUR AUDIO - BIEN PLACÉ === -->
-  <div class="audio-player">
-    <div class="section-label">AUDIO://Déconnecté_L’ATS.mp3</div>
-    <div class="terminal-box green">
-      <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
-        <button id="playBtn" style="background:none; border:1px solid var(--green); color:var(--green); padding:6px 14px; font-family:monospace; cursor:pointer; font-size:11px;">▶ PLAY</button>
-        <button id="stopBtn" style="background:none; border:1px solid var(--red); color:var(--red); padding:6px 14px; font-family:monospace; cursor:pointer; font-size:11px;">■ STOP</button>
-        
-        <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.65" style="width:120px; accent-color:var(--green);">
-        
-        <span id="audioTime" style="font-size:10px; color:var(--green-dim); min-width:48px; font-family:monospace;">00:00</span>
-      </div>
+  <!-- LECTEUR AUDIO -->
+<div style="margin-top: 25px;">
+  <div class="section-label">AUDIO://Déconnecté L’ATS.mp3</div>
+  <div class="terminal-box green">
+    <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+      <button id="playBtn" style="background:none; border:1px solid var(--green); color:var(--green); padding:8px 16px; font-family:monospace; cursor:pointer; font-size:11px;">▶ PLAY</button>
+      <button id="stopBtn" style="background:none; border:1px solid var(--red); color:var(--red); padding:8px 16px; font-family:monospace; cursor:pointer; font-size:11px;">■ STOP</button>
       
-      <audio id="bgAudio" preload="metadata">
-        <source id="audioSource" src="https://raw.githubusercontent.com/Daewolff/Cv-interactif/refs/heads/main/Déconnecté L’ATS.mp3" type="audio/mpeg">
-      </audio>
+      <input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.7" style="width:130px; accent-color:var(--green);">
+      
+      <span id="audioTime" style="font-size:10px; color:var(--green-dim); min-width:50px; font-family:monospace;">00:00</span>
     </div>
+    
+    <audio id="bgAudio" preload="metadata">
+      <source id="audioSource" src="https://raw.githubusercontent.com/Daewolff/Cv-interactif/main/D%C3%A9connect%C3%A9%20L%E2%80%99ATS.mp3" type="audio/mpeg">
+    </audio>
   </div>
+</div>
 
   <div>
     <div class="section-label">Intérêts / Processus parallèles</div>
