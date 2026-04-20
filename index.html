@@ -624,11 +624,11 @@ body::after {
     </div>
   </div>
 
-  <!-- LECTEUR AUDIO -->
+ <!-- LECTEUR AUDIO - VERSION QUI MARCHE -->
 <div style="margin-top: 25px;">
   <div class="section-label">AUDIO://Déconnecté L’ATS.mp3</div>
   <div class="terminal-box green">
-    <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+    <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; padding:10px 0;">
       <button id="playBtn" style="background:none; border:1px solid var(--green); color:var(--green); padding:8px 16px; font-family:monospace; cursor:pointer; font-size:11px;">▶ PLAY</button>
       <button id="stopBtn" style="background:none; border:1px solid var(--red); color:var(--red); padding:8px 16px; font-family:monospace; cursor:pointer; font-size:11px;">■ STOP</button>
       
@@ -638,7 +638,7 @@ body::after {
     </div>
     
     <audio id="bgAudio" preload="metadata">
-      <source id="audioSource" src="Déconnecté_ATS.mp3" type="audio/mpeg">
+      <source src="https://github.com/Daewolff/Cv-interactif/blob/d329da14103b7813c04ad94748e40ff6fc0c8ad9/D%C3%A9connect%C3%A9_ATS.mp3" type="audio/mpeg">
     </audio>
   </div>
 </div>
@@ -766,14 +766,14 @@ function typeLoop() {
 }
 setTimeout(typeLoop, 1800);
 
-// ====================== LECTEUR AUDIO ======================
+// ====================== AUDIO PLAYER ======================
 const audio = document.getElementById('bgAudio');
 const playBtn = document.getElementById('playBtn');
 const stopBtn = document.getElementById('stopBtn');
 const volumeSlider = document.getElementById('volumeControl');
 const audioTime = document.getElementById('audioTime');
 
-audio.volume = 0.65;
+audio.volume = 0.7;
 
 playBtn.addEventListener('click', () => {
   if (audio.paused) {
@@ -804,7 +804,8 @@ audio.addEventListener('timeupdate', () => {
 audio.addEventListener('ended', () => {
   playBtn.textContent = '▶ PLAY';
 });
-// ====================== FIN LECTEUR AUDIO ======================
+// ====================== FIN AUDIO ======================
+  
 </script>
 </body>
 </html>
