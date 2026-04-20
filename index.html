@@ -766,45 +766,50 @@ function typeLoop() {
 }
 setTimeout(typeLoop, 1800);
 
-// ====================== AUDIO PLAYER ======================
+<script>
+// ====================== AUDIO PLAYER (VERSION CORRIGÉE) ======================
 const audio = document.getElementById('bgAudio');
 const playBtn = document.getElementById('playBtn');
 const stopBtn = document.getElementById('stopBtn');
 const volumeSlider = document.getElementById('volumeControl');
 const audioTime = document.getElementById('audioTime');
 
-audio.volume = 0.7;
+if (audio && playBtn && stopBtn) {
+  audio.volume = 0.7;
 
-playBtn.addEventListener('click', () => {
-  if (audio.paused) {
-    audio.play();
-    playBtn.textContent = '❚❚ PAUSE';
-  } else {
+  playBtn.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play().catch(err => console.log("Erreur lecture :", err));
+      playBtn.textContent = '❚❚ PAUSE';
+    } else {
+      audio.pause();
+      playBtn.textContent = '▶ PLAY';
+    }
+  });
+
+  stopBtn.addEventListener('click', () => {
     audio.pause();
+    audio.currentTime = 0;
     playBtn.textContent = '▶ PLAY';
-  }
-});
+  });
 
-stopBtn.addEventListener('click', () => {
-  audio.pause();
-  audio.currentTime = 0;
-  playBtn.textContent = '▶ PLAY';
-});
+  volumeSlider.addEventListener('input', () => {
+    audio.volume = parseFloat(volumeSlider.value);
+  });
 
-volumeSlider.addEventListener('input', () => {
-  audio.volume = parseFloat(volumeSlider.value);
-});
+  audio.addEventListener('timeupdate', () => {
+    const m = Math.floor(audio.currentTime / 60);
+    const s = Math.floor(audio.currentTime % 60);
+    audioTime.textContent = m.toString().padStart(2, '0') + ':' + s.toString().padStart(2, '0');
+  });
 
-audio.addEventListener('timeupdate', () => {
-  const m = Math.floor(audio.currentTime / 60);
-  const s = Math.floor(audio.currentTime % 60);
-  audioTime.textContent = `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
-});
-
-audio.addEventListener('ended', () => {
-  playBtn.textContent = '▶ PLAY';
-});
-// ====================== FIN AUDIO ======================
+  audio.addEventListener('ended', () => {
+    playBtn.textContent = '▶ PLAY';
+  });
+}
+// ====================== FIN AUDIO PLAYER ======================
+  
+</script>
   
 </script>
 </body>
