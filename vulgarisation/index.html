@@ -40,16 +40,16 @@
 
     <section class="lesson-shell section-shell" id="scenes" aria-label="Les cinq scènes de vulgarisation">
       <nav class="scene-tabs" role="tablist" aria-label="Choisir une scène">
-        <button class="tab-link active" type="button" role="tab" aria-selected="true" aria-controls="scene1" data-scene="scene1"><small>01</small><span>Le dépannage</span></button>
-        <button class="tab-link" type="button" role="tab" aria-selected="false" aria-controls="scene2" data-scene="scene2"><small>02</small><span>Les méthodes</span></button>
-        <button class="tab-link" type="button" role="tab" aria-selected="false" aria-controls="scene3" data-scene="scene3"><small>03</small><span>La documentation</span></button>
-        <button class="tab-link" type="button" role="tab" aria-selected="false" aria-controls="scene4" data-scene="scene4"><small>04</small><span>Le protocole CDP</span></button>
-        <button class="tab-link" type="button" role="tab" aria-selected="false" aria-controls="scene5" data-scene="scene5"><small>05</small><span>Le helpdesk</span></button>
+        <button class="tab-link active" type="button" role="tab" aria-selected="true" id="scene-tab1" aria-controls="scene1" tabindex="0" data-scene="scene1"><small>01</small><span>Le dépannage</span></button>
+        <button class="tab-link" type="button" role="tab" aria-selected="false" id="scene-tab2" aria-controls="scene2" tabindex="-1" data-scene="scene2"><small>02</small><span>Les méthodes</span></button>
+        <button class="tab-link" type="button" role="tab" aria-selected="false" id="scene-tab3" aria-controls="scene3" tabindex="-1" data-scene="scene3"><small>03</small><span>La documentation</span></button>
+        <button class="tab-link" type="button" role="tab" aria-selected="false" id="scene-tab4" aria-controls="scene4" tabindex="-1" data-scene="scene4"><small>04</small><span>Le protocole CDP</span></button>
+        <button class="tab-link" type="button" role="tab" aria-selected="false" id="scene-tab5" aria-controls="scene5" tabindex="-1" data-scene="scene5"><small>05</small><span>Le helpdesk</span></button>
       </nav>
 
       <div class="container">
 
-        <div id="scene1" class="scene-content active">
+        <div id="scene1" class="scene-content active" role="tabpanel" tabindex="0" aria-labelledby="scene-tab1">
             <h2>🎬 SCÈNE 1 — “Le Dépannage, mon p’tit vieux, c’est pas de la magie…”</h2>
             <div class="meta">(Version Audiardisée, fidèle au cours, avec une pincée de mauvaise foi et de câbles torsadés)</div>
             
@@ -124,7 +124,7 @@
             <img src="vulgarisation-03.jpg" alt="Illustration de la scène réseau 3" class="scene-image" onerror="this.style.display='none';">
         </div>
 
-        <div id="scene2" class="scene-content">
+        <div id="scene2" class="scene-content" role="tabpanel" tabindex="0" aria-labelledby="scene-tab2">
             <h2>🎬 SCÈNE 2 — “Les méthodes de dépannage : la bande des sept”</h2>
             <div class="meta">(Version Audiardisée, fidèle au cours, avec l’esprit grande gueule et tendre des Tontons Flingueurs)</div>
             
@@ -193,7 +193,7 @@
             <p>Mais tous ont un point commun : ils sauvent le réseau avant que quelqu’un ne propose de redémarrer la box.</p>
         </div>
 
-        <div id="scene3" class="scene-content">
+        <div id="scene3" class="scene-content" role="tabpanel" tabindex="0" aria-labelledby="scene-tab3">
             <h2>🎬 SCÈNE 3 — “La Documentation : Sans plan, t’es un marin sans boussole”</h2>
             <div class="meta">(Version Audiardisée, fidèle au cours, avec l’ambiance d’un polar où le réseau est un quartier louche)</div>
             
@@ -261,7 +261,7 @@
             <p>La documentation, c’est pas glamour. C’est pas héroïque. Mais c’est ce qui évite que le réseau parte en vrille à la première mise à jour Windows.</p>
         </div>
 
-        <div id="scene4" class="scene-content">
+        <div id="scene4" class="scene-content" role="tabpanel" tabindex="0" aria-labelledby="scene-tab4">
             <h2>🎬 SCÈNE 4 — “CDP : Le voisin qui balance tout le monde”</h2>
             <div class="meta">(Version Audiardisée, fidèle au cours, avec l’ambiance d’un immeuble où tout le monde écoute derrière la porte)</div>
             
@@ -319,7 +319,7 @@
             <p>Et dans un réseau mal documenté, c’est souvent lui qui sauve la mise.</p>
         </div>
 
-        <div id="scene5" class="scene-content">
+        <div id="scene5" class="scene-content" role="tabpanel" tabindex="0" aria-labelledby="scene-tab5">
             <h2>🎬 SCÈNE 5 — “Le Helpdesk : Comprendre un utilisateur qui dit n’importe quoi”</h2>
             <div class="meta">(Version Audiardisée, fidèle au cours, avec l’ambiance d’un commissariat où les suspects s’appellent “Outlook”, “WiFi” et “Imprimante réseau”)</div>
             

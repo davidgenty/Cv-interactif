@@ -7,9 +7,9 @@ function showScene(tab){
     const selected=item===tab;
     item.classList.toggle('active',selected);
     item.setAttribute('aria-selected',String(selected));
+    item.setAttribute('tabindex',selected?'0':'-1');
   });
   scenes.forEach(scene=>scene.classList.toggle('active',scene.id===sceneId));
-  document.getElementById(sceneId)?.focus({preventScroll:true});
 }
 
 sceneTabs.forEach((tab,index)=>{
@@ -28,8 +28,6 @@ sceneTabs.forEach((tab,index)=>{
 });
 
 scenes.forEach(scene=>{
-  scene.setAttribute('role','tabpanel');
-  scene.setAttribute('tabindex','-1');
   scene.querySelectorAll('p').forEach(paragraph=>{
     const text=paragraph.textContent.trim();
     if(text.startsWith('«'))paragraph.classList.add('course-quote');

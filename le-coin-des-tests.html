@@ -878,6 +878,7 @@
   
     /* Présentation simplifiée des tests : petites cartes prêtes à s'aligner côte à côte */
     .tests-grid-simple{
+      scroll-margin-top: 110px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 340px));
       gap: 18px;
@@ -941,7 +942,7 @@
           <h1>Le coin des <em>tests</em>.</h1>
         </div>
 
-        <div class="stations tests-grid-simple">
+        <div class="stations tests-grid-simple" id="stations">
           <article class="station">
             <div class="kicker">
               <span class="index">01</span>
